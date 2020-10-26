@@ -17,7 +17,6 @@ add-apt-repository universe
 # Docker Preparation 1
 # Remove Old Installations 
 apt-get remove docker -y
-apt-get remove docker-cli -y
 apt-get remove docker-engine -y
 apt-get remove docker.io -y
 apt-get remove containerd -y 
