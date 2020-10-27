@@ -212,6 +212,11 @@ rm -rf ~/Downloads/InstallScriptDir
 figlet ssh keys 
 cp -r ssh-keys ~/.ssh/
 
+# update 
+apt-get -y update 
+
+# fix broken install 
+apt --fix-broken install -y
 
 # update 
 apt-get -y update
