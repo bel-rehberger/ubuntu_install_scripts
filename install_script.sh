@@ -176,6 +176,10 @@ snap install code --classic #VSCode
 snap install spotify #Spotify
 
 # Install npm dependencies
+figlet npm dependencies
+npm install semver
+npm install truffle 
+npm install drizzle
 
 # Install pip dependencies
 
