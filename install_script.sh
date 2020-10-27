@@ -3,11 +3,16 @@
 # first message
 echo "Initializing Ubuntu Post Install Script for Dev (V 1.1)"
 
+
 # install figlet
 apt-get install figlet -y
 
 # Start Message
 figlet UBUNTU POST INSTALL SCRIPT
+
+
+# Install tzdata dependency 
+apt-get install tzdata -y
 
 
 # Add repositories
