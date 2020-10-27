@@ -49,24 +49,29 @@ apt-get install openssh-server -y
 apt-get install openssh-client -y
 
 # snap 
+figlet snap
 apt-get install snap -y 
 
 # zsh
 apt-get install zsh -y
 
 # java jdk
+figlet java
 apt-get install default-jre -y
 apt-get install default-jdk -y
 
 # python 
+figlet python
 apt-get install python -y
 apt-get install python3 -y
 apt-get install python3-pip -y
 
 # nodejs
+figlet node
 apt-get install nodejs -y
 
 # npm 
+figlet npm
 apt-get install npm -y
 
 # Docker Preparation 2
