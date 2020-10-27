@@ -95,6 +95,9 @@ apt-get install gnome -y
 # gnome tweak tool
 apt-get install gnome-tweak-tool -y
 
+# vnc 
+apt-get install tightvncserver -y
+
 # file compressing tools
 apt-get install zip -y
 apt-get install unzip -y 
