@@ -132,6 +132,13 @@ apt-get install teamviewer -y
 apt-get install hollywood -y
 
 
+# update 
+apt-get -y update 
+
+# fix broken install 
+apt --fix-broken install -y
+
+
 # Docker Preparation 3
 
 # Add Docker GPG Key 
@@ -169,6 +176,11 @@ cp configs/omz_config ~/.zshrc
 # Reload OMZ Configuration
 source ~/.zshrc
 
+# update 
+apt-get -y update 
+
+# fix broken install 
+apt --fix-broken install -y
 
 # Install snap packages
 figlet snap packages
