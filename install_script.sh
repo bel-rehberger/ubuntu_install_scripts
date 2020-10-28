@@ -176,6 +176,7 @@ figlet snap packages
 snap install chromium --classic #Chromium
 snap install intellij-idea-community --classic --edge #IntelliJ Community
 snap install code --classic #VSCode
+snap install postman #Postman
 snap install spotify #Spotify
 
 # Install npm dependencies
@@ -188,24 +189,34 @@ npm install drizzle
 
 
 # Create Installation directory
-mkdir ~/Downloads/InstallScriptDir
+mkdir InstallScriptDir
 
 # Get DEB files
 figlet deb files
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P ~/Downloads/InstallScriptDir
-wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -P ~/Downloads/InstallScriptDir
-wget https://launcher.mojang.com/download/Minecraft.deb -P ~/Downloads/InstallScriptDir
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P InstallScriptDir  # Google Chrome
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.15-1_all.deb -P InstallScriptDir                # MySQL Workbench
+wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -P InstallScriptDir        # Teamviewer
+wget https://launcher.mojang.com/download/Minecraft.deb -P InstallScriptDir                         # Minecraft
 
 # Install DEB files
-dpkg -i ~/Downloads/InstallScriptDir/google-chrome-stable_current_amd64.deb
-dpkg -i ~/Downloads/InstallScriptDir/Minecraft.deb
-dpkg -i ~/Downloads/InstallScriptDir/teamviewer_amd64.deb
+dpkg -i InstallScriptDir/google-chrome-stable_current_amd64.deb
+dpkg -i InstallScriptDir/Minecraft.deb
+dpkg -i InstallScriptDir/teamviewer_amd64.deb
 
+# Get MySQL Workbench Apt Repo
+apt-get install -y InstallScriptDir/mysql-apt-config_0.8.15-1_all.deb
+
+# Update apt-cache
+apt-get -y update 
+
+# Install Mysql Workbench
+figlet MySQL Workbench
+apt-get install mysql-workbench-community
 
 # Clean up DEB files
 # Remove Installation directory 
-rm -rf ~/Downloads/InstallScriptDir
+rm -rf InstallScriptDir
  
 
 # Copy all SSH keys (you have to move them in the folder before)
