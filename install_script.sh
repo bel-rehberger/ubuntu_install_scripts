@@ -22,7 +22,6 @@ add-apt-repository universe
 # Docker Preparation 1
 # Remove Old Installations 
 apt-get remove docker -y
-apt-get remove docker-engine -y
 apt-get remove docker.io -y
 apt-get remove containerd -y 
 apt-get remove runc -y
@@ -40,10 +39,16 @@ apt-get install nano -y
 apt-get install screen -y
 
 # git
+figlet git
 apt-get install git -y
 
-# diff
-apt-get install diff -y
+# configure git (replace by your own)
+git config --global user.name "MAXIMILIAN REHBERGER"
+git config --global user.email "maximilian.rehberger@belectric.com"
+
+
+# system monitoring
+apt-get install htop -y
 
 # file transfer
 apt-get install wget -y
@@ -60,7 +65,13 @@ apt-get install snap -y
 # zsh
 apt-get install zsh -y
 
-# java jdk
+# apache 
+apt-get install apache2 -y 
+
+# mysql 
+apt-get install mysql-server -y
+
+# java jre & jdk
 figlet java
 apt-get install default-jre -y
 apt-get install default-jdk -y
@@ -126,7 +137,6 @@ apt-get install libglib2.0-0 -y
 
 # additional tools
 apt-get install filezilla -y
-apt-get install teamviewer -y
 
 # other stuff
 apt-get install hollywood -y
@@ -142,14 +152,14 @@ apt --fix-broken install -y
 # Docker Preparation 3
 
 # Add Docker GPG Key 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 
 
 # Docker Installation 
 figlet docker
 
 # Add Docker Repository 
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 # Refresh Repositories 
 apt-get update
@@ -200,31 +210,32 @@ npm install drizzle
 # Install pip dependencies
 
 
-# Create Installation directory
-mkdir InstallScriptDir
+
+# DEB Dependencies
+apt-get install fonts-liberation -y
 
 # Get DEB files
 figlet deb files
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P InstallScriptDir  # Google Chrome
-wget https://dev.mysql.com/get/mysql-apt-config_0.8.15-1_all.deb -P InstallScriptDir                # MySQL Workbench
-wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -P InstallScriptDir        # Teamviewer
-wget https://launcher.mojang.com/download/Minecraft.deb -P InstallScriptDir                         # Minecraft
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb  # Google Chrome
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.15-1_all.deb                # MySQL Workbench
+wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb        # Teamviewer
+wget https://launcher.mojang.com/download/Minecraft.deb                         # Minecraft
+wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb                 # Steam
 
 # Install DEB files
-dpkg -i InstallScriptDir/google-chrome-stable_current_amd64.deb
-dpkg -i InstallScriptDir/Minecraft.deb
-dpkg -i InstallScriptDir/teamviewer_amd64.deb
-
-# Get MySQL Workbench Apt Repo
-apt-get install -y InstallScriptDir/mysql-apt-config_0.8.15-1_all.deb
+dpkg -i mysql-apt-config_0.8.15-1_all.deb
+dpkg -i google-chrome-stable_current_amd64.deb
+dpkg -i teamviewer_amd64.deb
+dpkg -i Minecraft.deb
+dpkg -i steam.deb
 
 # Update apt-cache
 apt-get -y update 
 
 # Install Mysql Workbench
 figlet MySQL Workbench
-apt-get install mysql-workbench-community
+apt-get install mysql-workbench-community -y
 
 # Clean up DEB files
 # Remove Installation directory 
