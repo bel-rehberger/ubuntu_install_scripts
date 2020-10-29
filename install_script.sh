@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# intialize timer 
+start=`date +%s`
+
 # first message
 echo "Initializing Ubuntu Post Install Script for Dev (V 1.1)"
 
@@ -65,16 +68,20 @@ apt-get install snap -y
 # zsh
 apt-get install zsh -y
 
+# java jre & jdk
+figlet java
+apt-get install default-jre -y
+apt-get install default-jdk -y
+
+# php
+filget php 
+apt-get install php -y
+
 # apache 
 apt-get install apache2 -y 
 
 # mysql 
 apt-get install mysql-server -y
-
-# java jre & jdk
-figlet java
-apt-get install default-jre -y
-apt-get install default-jdk -y
 
 # python 
 figlet python
@@ -137,6 +144,7 @@ apt-get install libglib2.0-0 -y
 
 # additional tools
 apt-get install filezilla -y
+apt-get install virtualbox -y
 
 # other stuff
 apt-get install hollywood -y
@@ -195,6 +203,10 @@ apt --fix-broken install -y
 # Install snap packages
 figlet snap packages
 
+systemctl start snapd.service
+systemctl status snapd.service
+snap version 
+
 snap install chromium --classic #Chromium
 snap install intellij-idea-community --classic --edge #IntelliJ Community
 snap install code --classic #VSCode
@@ -214,6 +226,25 @@ npm install drizzle
 # DEB Dependencies
 apt-get install fonts-liberation -y
 
+apt-get install libqt5gui5 -y 
+apt-get install libqt5widgets5 -y 
+apt-get install libqt5qml5 -y 
+apt-get install libqt5quick5 -y 
+apt-get install libqt5dbus5 -y
+apt-get install libqt5webkit5 -y
+apt-get install libqt5x11extras5 -y 
+apt-get install qml-module-qtquick2 -y 
+apt-get install qml-module-qtquick-controls -y 
+apt-get install qml-module-qtquick-dialogs -y 
+apt-get install qml-module-qtquick-window2 -y 
+apt-get install qml-module-qtquick-layouts -y 
+
+# apt fix broken install 
+apt-get --fix-broken install -y
+
+# update
+apt-get update 
+
 # Get DEB files
 figlet deb files
 
@@ -231,7 +262,9 @@ dpkg -i Minecraft.deb
 dpkg -i steam.deb
 
 # Update apt-cache
+apt-get --fix-broken install -y
 apt-get -y update 
+
 
 # Install Mysql Workbench
 figlet MySQL Workbench
@@ -261,8 +294,14 @@ apt-get -y upgrade
 # apt cleanup
 apt-get -y autoremove
 
+# end time 
+end=`date +%s`
+
+# difference 
+runtime=$((end-start))
+
 # Final message
-figlet DONE
+figlet DONE IN $runtime s
  
 # Exit the script
 exit 0
