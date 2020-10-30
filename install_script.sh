@@ -45,6 +45,10 @@ apt-get install screen -y
 figlet git
 apt-get install git -y
 
+# git lfs 
+apt-get install git-lfs -y 
+git lfs install 
+
 # configure git (replace by your own)
 git config --global user.name "MAXIMILIAN REHBERGER"
 git config --global user.email "maximilian.rehberger@belectric.com"
