@@ -271,8 +271,11 @@ figlet MySQL Workbench
 apt-get install mysql-workbench-community -y
 
 # Clean up DEB files
-# Remove Installation directory 
-rm -rf InstallScriptDir
+rm -rf mysql-apt-config_0.8.15-1_all.deb
+rm -rf google-chrome-stable_current_amd64.deb
+rm -rf teamviewer_amd64.deb
+rm -rf Minecraft.deb
+rm -rf steam.deb
  
 
 # Copy all SSH keys (you have to move them in the folder before)
