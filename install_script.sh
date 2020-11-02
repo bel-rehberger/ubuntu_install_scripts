@@ -27,7 +27,14 @@ apt-get -y install tzdata
 
 # Add repositories
 add-apt-repository universe
- 
+
+# enhanced setup
+wget https://raw.githubusercontent.com/Microsoft/linux-vm-tools/master/ubuntu/18.04/install.sh
+
+mv install.sh enhanced_install.sh
+chmod +x enhanced_install.sh
+sh enhanced_install.sh
+
 
 # Docker Preparation 1
 # Remove Old Installations 
