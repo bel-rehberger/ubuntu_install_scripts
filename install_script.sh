@@ -38,7 +38,11 @@ apt-get -y remove runc
 
 
 # Get the latest package lists
-apt-get update
+figlet update
+apt-get -y update
+
+# perform upgrade
+apt-get -y upgrade
  
 
 # Install from Repo
