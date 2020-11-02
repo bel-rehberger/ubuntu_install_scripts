@@ -5,6 +5,8 @@
 # Debian environment non interactive
 export DEBIAN_FRONTEND=noninteractive
 
+#dpkg-reconfigure debconf --frontend=noninteractive
+
 # intialize timer 
 start=`date +%s`
 
@@ -310,6 +312,16 @@ apt-get -y upgrade
 # apt cleanup
 apt-get -y autoremove
 
+# grub variables
+figlet grub 
+
+# debug verbose
+export GRUB_CMDLINE_LINUX_DEFAULT="nosplash debug --verbose"
+
+# update grub 
+update-grub 
+
+
 # end time 
 end=`date +%s`
 
@@ -319,5 +331,11 @@ runtime=$((end-start))
 # Final message
 figlet DONE IN $runtime s
  
+
+# Reboot to apply settings
+echo "Applying Changes... reboot in 60 seconds"
+sleep 60; reboot
+
+
 # Exit the script
 exit 0
