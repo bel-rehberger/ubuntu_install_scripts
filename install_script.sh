@@ -287,6 +287,9 @@ dpkg -i teamviewer_amd64.deb
 dpkg -i Minecraft.deb
 dpkg -i steam.deb
 
+# dpkg reconfigure
+dpkg --configure -a
+
 # Update apt-cache
 apt-get -y --fix-broken install
 apt-get -y update 
