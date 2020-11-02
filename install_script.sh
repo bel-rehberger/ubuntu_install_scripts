@@ -11,7 +11,7 @@ export DEBIAN_FRONTEND=noninteractive
 start=`date +%s`
 
 # first message
-echo "Initializing Ubuntu Post Install Script for Dev (V 1.1)"
+echo "Initializing Ubuntu Post Install Script for Dev (V 1.2)"
 
 
 # install figlet
