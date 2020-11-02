@@ -1,4 +1,9 @@
-#!/bin/sh
+#!/bin/bash
+
+# NOTE: This install script is only for x86_64 (AMD64) architecture
+
+# Debian environment non interactive
+export DEBIAN_FRONTEND=noninteractive
 
 # intialize timer 
 start=`date +%s`
@@ -8,14 +13,14 @@ echo "Initializing Ubuntu Post Install Script for Dev (V 1.1)"
 
 
 # install figlet
-apt-get install figlet -y
+apt-get -y install figlet
 
 # Start Message
 figlet UBUNTU POST INSTALL SCRIPT
 
 
 # Install tzdata dependency 
-apt-get install tzdata -y
+apt-get -y install tzdata 
 
 
 # Add repositories
@@ -24,10 +29,10 @@ add-apt-repository universe
 
 # Docker Preparation 1
 # Remove Old Installations 
-apt-get remove docker -y
-apt-get remove docker.io -y
-apt-get remove containerd -y 
-apt-get remove runc -y
+apt-get -y remove docker 
+apt-get -y remove docker.io 
+apt-get -y remove containerd  
+apt-get -y remove runc 
 
 
 # Get the latest package lists
@@ -38,15 +43,15 @@ apt-get update
 figlet apt packages
 
 # main cli applications
-apt-get install nano -y
-apt-get install screen -y
+apt-get -y install nano 
+apt-get -y install screen 
 
 # git
 figlet git
-apt-get install git -y
+apt-get -y install git 
 
 # git lfs 
-apt-get install git-lfs -y 
+apt-get -y install git-lfs  
 git lfs install 
 
 # configure git (replace by your own)
@@ -55,110 +60,114 @@ git config --global user.email "maximilian.rehberger@belectric.com"
 
 
 # system monitoring
-apt-get install htop -y
+apt-get -y install htop 
 
 # file transfer
-apt-get install wget -y
-apt-get install curl -y
+apt-get -y install wget 
+apt-get -y install curl 
 
 # openssh
-apt-get install openssh-server -y 
-apt-get install openssh-client -y
+apt-get -y install openssh-server  
+apt-get -y install openssh-client 
 
 # snap 
 figlet snap
-apt-get install snap -y 
+apt-get -y install snap  
+
+# pacman
+figlet pacman 
+apt-get -y install pacman 
 
 # zsh
-apt-get install zsh -y
+apt-get -y install zsh 
 
 # java jre & jdk
 figlet java
-apt-get install default-jre -y
-apt-get install default-jdk -y
+apt-get -y install default-jre 
+apt-get -y install default-jdk 
 
 # php
 filget php 
-apt-get install php -y
+apt-get -y install php 
 
 # apache 
-apt-get install apache2 -y 
+apt-get -y install apache2  
 
 # mysql 
-apt-get install mysql-server -y
+apt-get -y install mysql-server 
 
 # python 
 figlet python
-apt-get install python -y
-apt-get install python3 -y
-apt-get install python3-pip -y
+apt-get -y install python 
+apt-get -y install python3 
+apt-get -y install python3-pip 
 
 # nodejs
 figlet node
-apt-get install nodejs -y
+apt-get -y install nodejs 
 
 # npm 
 figlet npm
-apt-get install npm -y
+apt-get -y install npm 
 
 # Docker Preparation 2
 # docker dependencies
-apt-get install apt-transport-https -y
-apt-get install ca-certificates -y
-apt-get install gnupg-agent -y
-apt-get install software-properties-common -y
+apt-get -y install apt-transport-https 
+apt-get -y install ca-certificates 
+apt-get -y install gnupg-agent 
+apt-get -y install software-properties-common 
 
 # desktop applications
-apt-get install gimp -y
+apt-get -y install gimp 
 
 # gnome 
-apt-get install gnome -y
+apt-get -y install gnome 
 
 # gnome tweak tool
-apt-get install gnome-tweak-tool -y
+apt-get -y install gnome-tweak-tool 
 
 # vnc 
-apt-get install tightvncserver -y
+apt-get -y install tightvncserver 
 
 # file compressing tools
-apt-get install zip -y
-apt-get install unzip -y 
-apt-get install rar -y  
-apt-get install unrar -y
+apt-get -y install zip 
+apt-get -y install unzip  
+apt-get -y install rar  
+apt-get -y install unrar 
 
 # file encryption tools 
-apt-get install gpg -y  
-apt-get install pgp -y
+apt-get -y install gpg   
+apt-get -y install pgp 
 
 # sinusbot dependencies
-apt-get install x11vnc -y
-apt-get install xvfb -y
-apt-get install libxcursor1 -y
-apt-get install bzip2 -y
-apt-get install libnss3 -y 
-apt-get install libegl1-mesa -y 
-apt-get install x11-xkb-utils -y 
-apt-get install libasound2 -y 
-apt-get install libpci3 -y 
-apt-get install libxslt1.1 -y 
-apt-get install libxkbcommon0 -y 
-apt-get install libxss1 -y 
-apt-get install libxcomposite1 -y 
-apt-get install libglib2.0-0 -y
+apt-get -y install x11vnc 
+apt-get -y install xvfb 
+apt-get -y install libxcursor1 
+apt-get -y install bzip2 
+apt-get -y install libnss3  
+apt-get -y install libegl1-mesa 
+apt-get -y install x11-xkb-utils  
+apt-get -y install libasound2 
+apt-get -y install libpci3 
+apt-get -y install libxslt1.1 
+apt-get -y install libxkbcommon0 
+apt-get -y install libxss1 
+apt-get -y install libxcomposite1 
+apt-get -y install libglib2.0-0 
 
 # additional tools
-apt-get install filezilla -y
-apt-get install virtualbox -y
+apt-get -y install filezilla 
+apt-get -y install virtualbox 
 
 # other stuff
-apt-get install hollywood -y
+apt-get -y install hollywood 
 
 
 # update 
 apt-get -y update 
 
 # fix broken install 
-apt --fix-broken install -y
+apt-get -y --fix-broken install
 
 
 # Docker Preparation 3
@@ -174,12 +183,12 @@ figlet docker
 add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 # Refresh Repositories 
-apt-get update
+apt-get -y update
 
 # Install Docker Engine 
-apt-get install docker-ce -y
-apt-get install docker-ce-cli -y 
-apt-get install containerd.io -y 
+apt-get -y install docker-ce
+apt-get -y install docker-ce-cli
+apt-get -y install containerd.io
 
 # update ca certificates
 update-ca-certificates
@@ -187,7 +196,7 @@ update-ca-certificates
 
 # Install OMZ
 figlet oh-my-zsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
 
 # Update OMZ
 omz update 
@@ -202,7 +211,7 @@ source ~/.zshrc
 apt-get -y update 
 
 # fix broken install 
-apt --fix-broken install -y
+apt-get -y --fix-broken install
 
 # Install snap packages
 figlet snap packages
@@ -228,23 +237,23 @@ npm install drizzle
 
 
 # DEB Dependencies
-apt-get install fonts-liberation -y
+apt-get -y install fonts-liberation 
 
-apt-get install libqt5gui5 -y 
-apt-get install libqt5widgets5 -y 
-apt-get install libqt5qml5 -y 
-apt-get install libqt5quick5 -y 
-apt-get install libqt5dbus5 -y
-apt-get install libqt5webkit5 -y
-apt-get install libqt5x11extras5 -y 
-apt-get install qml-module-qtquick2 -y 
-apt-get install qml-module-qtquick-controls -y 
-apt-get install qml-module-qtquick-dialogs -y 
-apt-get install qml-module-qtquick-window2 -y 
-apt-get install qml-module-qtquick-layouts -y 
+apt-get -y install libqt5gui5 
+apt-get -y install libqt5widgets5 
+apt-get -y install libqt5qml5 
+apt-get -y install libqt5quick5 
+apt-get -y install libqt5dbus5 
+apt-get -y install libqt5webkit5
+apt-get -y install libqt5x11extras5 
+apt-get -y install qml-module-qtquick2 
+apt-get -y install qml-module-qtquick-controls
+apt-get -y install qml-module-qtquick-dialogs 
+apt-get -y install qml-module-qtquick-window2 
+apt-get -y install qml-module-qtquick-layouts 
 
 # apt fix broken install 
-apt-get --fix-broken install -y
+apt-get -y --fix-broken install 
 
 # update
 apt-get update 
@@ -266,13 +275,13 @@ dpkg -i Minecraft.deb
 dpkg -i steam.deb
 
 # Update apt-cache
-apt-get --fix-broken install -y
+apt-get -y --fix-broken install
 apt-get -y update 
 
 
 # Install Mysql Workbench
 figlet MySQL Workbench
-apt-get install mysql-workbench-community -y
+apt-get -y install mysql-workbench-community 
 
 # Clean up DEB files
 rm -rf mysql-apt-config_0.8.15-1_all.deb
@@ -290,7 +299,7 @@ cp -r ssh-keys ~/.ssh/
 apt-get -y update 
 
 # fix broken install 
-apt --fix-broken install -y
+apt-get -y --fix-broken install
 
 # update 
 apt-get -y update
