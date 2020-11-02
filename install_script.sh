@@ -129,6 +129,9 @@ apt-get -y install gimp
 # gnome 
 apt-get -y install gnome 
 
+# gnome tweaks
+apt-get -y install gnome-tweaks
+
 # gnome tweak tool
 apt-get -y install gnome-tweak-tool 
 
