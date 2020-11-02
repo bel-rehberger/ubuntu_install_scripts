@@ -145,6 +145,9 @@ apt-get -y install gnome-tweak-tool
 # vnc 
 apt-get -y install tightvncserver 
 
+# xrdp 
+apt-get -y install xrdp 
+
 # file compressing tools
 apt-get -y install zip 
 apt-get -y install unzip  
