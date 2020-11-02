@@ -237,6 +237,8 @@ snap install spotify #Spotify
 
 # Install npm dependencies
 figlet npm dependencies
+npm install angular
+npm install react
 npm install semver
 npm install truffle 
 npm install drizzle
@@ -244,6 +246,8 @@ npm install drizzle
 # Install pip dependencies
 
 
+# dpkg reconfigure
+dpkg --configure -a
 
 # DEB Dependencies
 apt-get -y install fonts-liberation 
