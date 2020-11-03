@@ -94,6 +94,10 @@ apt-get -y install pacman
 # zsh
 apt-get -y install zsh 
 
+# maven
+figlet maven 
+apt-get -y install mvn
+
 # java jre & jdk
 figlet java
 apt-get -y install default-jre 
@@ -225,6 +229,10 @@ cp configs/omz_config ~/.zshrc
 
 # Reload OMZ Configuration
 source ~/.zshrc
+
+# powerline fonts 
+apt-get -y install fonts-powerline
+
 
 # update 
 apt-get -y update 
