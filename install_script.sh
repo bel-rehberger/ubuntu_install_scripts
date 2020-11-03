@@ -29,7 +29,7 @@ apt-get -y install tzdata
 add-apt-repository universe
 
 # enhanced setup
-wget https://github.com/Hinara/linux-vm-tools/blob/ubuntu20-04/ubuntu/20.04/install.sh
+wget https://raw.githubusercontent.com/Hinara/linux-vm-tools/ubuntu20-04/ubuntu/20.04/install.sh
 
 mv install.sh enhanced_install.sh
 chmod +x enhanced_install.sh
