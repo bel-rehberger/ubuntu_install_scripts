@@ -216,6 +216,10 @@ apt-get -y install containerd.io
 # update ca certificates
 update-ca-certificates
 
+# Docker Compose 
+curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
 
 # Install OMZ
 figlet oh-my-zsh
@@ -249,6 +253,7 @@ snap version
 
 snap install chromium --classic #Chromium
 snap install intellij-idea-community --classic --edge #IntelliJ Community
+snap install eclipse --classic #Eclipse
 snap install code --classic #VSCode
 snap install postman #Postman
 snap install spotify #Spotify
