@@ -152,6 +152,9 @@ apt-get -y install tightvncserver
 # xrdp 
 apt-get -y install xrdp 
 
+# neofetch
+apt-get -y install neofetch
+
 # file compressing tools
 apt-get -y install zip 
 apt-get -y install unzip  
@@ -257,6 +260,7 @@ snap install eclipse --classic #Eclipse
 snap install code --classic #VSCode
 snap install postman #Postman
 snap install spotify #Spotify
+snap install discord #Discord
 
 # Install npm dependencies
 figlet npm dependencies
